@@ -14,8 +14,14 @@ document.getElementById('startButton').addEventListener('click', () => {
                 },
                 body: JSON.stringify({ content: message })
             })
-            .then(response => console.log(`メッセージが正常に送信されました: ${response.status}`))
-            .catch(error => console.log(`メッセージの送信に失敗しました: ${error}`));
+            .then(response => {
+                console.log(`メッセージが正常に送信されました: ${response.status}`);
+                document.getElementById('console').textContent += `メッセージが正常に送信されました: ${response.status}\n`;
+            })
+            .catch(error => {
+                console.log(`メッセージの送信に失敗しました: ${error}`);
+                document.getElementById('console').textContent += `メッセージの送信に失敗しました: ${error}\n`;
+            });
         }, interval);
 
         intervalIds.push(intervalId);
