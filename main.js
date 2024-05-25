@@ -1,7 +1,7 @@
 let intervalIds = [];
 
 document.getElementById('startButton').addEventListener('click', () => {
-    const webhookUrls = document.getElementById('webhookUrl').value.split('\n');
+    const webhookUrls = document.getElementById('webhookUrls').value.split('\n');
     const interval = parseFloat(document.getElementById('interval').value) * 1000; // convert to milliseconds
     const message = document.getElementById('message').value;
 
