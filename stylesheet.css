@@ -1,8 +1,7 @@
 body {
     background-color: gray;
 }
-input, button {
+textarea, input, button {
     font-size: 30px;
     margin: 10px;
 }
-
