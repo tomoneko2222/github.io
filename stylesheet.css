@@ -1,7 +1,7 @@
 body {
     background-color: gray;
 }
-textarea, input, button, pre {
+textarea, input, button {
     font-size: 30px;
     margin: 10px;
     display: block;  /* 追加 */
