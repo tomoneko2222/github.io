@@ -8,14 +8,28 @@ document.getElementById('startButton').addEventListener('click', () => {
 
     webhookUrls.forEach(webhookUrl => {
         const intervalId = setInterval(() => {
-            const requestBody = embedMessage ? { embeds: [{ description: message }] } : { content: message };
+            let data;
+
+            if (embedMessage) {
+                data = {
+                    "embeds": [{
+                        "title": " ",
+                        "description": message,
+                        "color": 7506394
+                    }]
+                };
+            } else {
+                data = {
+                    "content": message
+                };
+            }
 
             fetch(webhookUrl.trim(), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(requestBody)
+                body: JSON.stringify(data)
             })
             .then(response => console.log(`メッセージが正常に送信されました: ${response.status}`))
             .catch(error => console.log(`メッセージの送信に失敗しました: ${error}`));
