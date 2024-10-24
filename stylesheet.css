@@ -1,5 +1,5 @@
 body {
-    background-color: #2c3e50;
+    background-color: #1a1a2e;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,14 +7,16 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: 'Arial', sans-serif;
-    color: #ecf0f1;
+    color: #e94560;
 }
 
 .container {
-    background-color: #34495e;
+    background-color: #16213e;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     width: 90%;
     max-width: 600px;
 }
@@ -22,7 +24,8 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #3498db;
+    color: #0f3460;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .input-group {
@@ -31,13 +34,19 @@ h1 {
 
 textarea, input[type="text"], input[type="number"] {
     width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
     border: none;
-    border-radius: 5px;
-    background-color: #ecf0f1;
-    color: #2c3e50;
+    border-radius: 10px;
+    background-color: #0f3460;
+    color: #e94560;
     font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #e94560;
 }
 
 .checkbox-group {
@@ -56,47 +65,54 @@ input[type="checkbox"] {
 }
 
 button {
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 5px;
-    background-color: #3498db;
+    border-radius: 10px;
+    background-color: #e94560;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
     font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #0f3460;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 #console {
     width: 90%;
     max-width: 600px;
     height: 200px;
-    background-color: #1a1a1a;
-    border-radius: 5px;
+    background-color: #0f3460;
+    border-radius: 10px;
     margin-top: 1rem;
     overflow-y: auto;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
 }
 
 #consoleHeader {
-    background-color: #333;
-    color: #fff;
+    background-color: #16213e;
+    color: #e94560;
     padding: 0.5rem;
     font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 #consoleOutput {
     padding: 0.5rem;
-    font-family: monospace;
+    font-family: 'Courier New', monospace;
     font-size: 0.9rem;
 }
 
 .success {
-    color: #2ecc71;
+    color: #4caf50;
 }
 
 .error {
-    color: #e74c3c;
+    color: #f44336;
 }
