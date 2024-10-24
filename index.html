@@ -1,18 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webhook Sender</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
     <div class="container">
-        <textarea id="webhookUrls" placeholder="webhookurl"></textarea><br>
-        <input id="interval" type="text" placeholder="発言間隔【秒】"><br>
-        <input id="message" type="text" placeholder="発言するメッセージ"><br>
-        <label>
-            <input type="checkbox" id="embedMessage"> 埋め込みメッセージとして送信する
-        </label><br>
-        <button id="startButton">Start</button>
-        <button id="stopButton">Stop</button>
+        <h1>Webhook Sender</h1>
+        <div class="input-group">
+            <textarea id="webhookUrls" placeholder="Webhook URLs (1行に1つ)"></textarea>
+        </div>
+        <div class="input-group">
+            <input id="interval" type="number" placeholder="発言間隔 (秒)">
+            <input id="message" type="text" placeholder="発言するメッセージ">
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="embedMessage">
+            <label for="embedMessage">埋め込みメッセージとして送信</label>
+        </div>
+        <div class="button-group">
+            <button id="startButton"><i class="fas fa-play"></i> Start</button>
+            <button id="stopButton"><i class="fas fa-stop"></i> Stop</button>
+        </div>
+    </div>
+    <div id="console">
+        <div id="consoleHeader">Console</div>
+        <div id="consoleOutput"></div>
     </div>
     <script src="main.js"></script>
 </body>
