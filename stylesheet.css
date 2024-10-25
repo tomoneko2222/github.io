@@ -44,6 +44,14 @@ textarea, input[type="text"], input[type="number"] {
     transition: all 0.3s ease;
 }
 
+textarea {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: auto;
+    resize: vertical;
+    min-height: 100px;
+}
+
 textarea:focus, input:focus {
     outline: none;
     box-shadow: 0 0 0 2px #e94560;
